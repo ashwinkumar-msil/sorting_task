@@ -35,6 +35,7 @@ class SortingSheet extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 onPressed: () {
+                  // ignore: unnecessary_null_comparison
                   if (selectedSortedType == null) {
                   } else {
                     BlocProvider.of<SortingBlocBloc>(context).add(
@@ -56,7 +57,7 @@ class SortingSheet extends StatelessWidget {
             ),
             Divider(
               height: 2,
-              color: Colors.grey.shade600,
+              color: Theme.of(context).dividerColor,
               indent: 15,
               endIndent: 15,
             ),
@@ -82,9 +83,9 @@ class SortingSheet extends StatelessWidget {
             child: Text(
               title,
               style: const TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16,
-                  color: Colors.grey),
+                fontWeight: FontWeight.normal,
+                fontSize: 16,
+              ),
             ),
           ),
           configureTextBtn(sortingType1, state, context),
