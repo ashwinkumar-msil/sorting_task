@@ -32,6 +32,7 @@ class _TabBarScreenState extends State<TabBarScreen>
   void initState() {
     _tabController = TabController(vsync: this, length: 4);
     watchlistBloc = BlocProvider.of<WatchlistBloc>(context);
+
     watchlistBloc.add(FetchContactData());
     super.initState();
   }
